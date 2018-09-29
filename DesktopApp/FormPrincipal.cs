@@ -55,7 +55,7 @@ namespace DesktopApp
 
         private dynamic GetCommand(string message)
         {
-            var client = new RestClient($"http://luisslaveapp.azurewebsites.net/api/Messages/GetCommand?Message={MessageTextBox.Text}");
+            var client = new RestClient($"https://luisslaveapp.azurewebsites.net/api/Messages/GetCommand?Message={MessageTextBox.Text}");
             var request = new RestRequest(Method.POST);
             IRestResponse response = client.Execute(request);
             return (dynamic)JObject.Parse(response.Content);
